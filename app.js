@@ -54,3 +54,20 @@ function removerAmigo(index) {
     amigos.splice(index, 1);
     atualizarLista();
 }
+
+function sortearAmigo() {
+    // Verifica se há amigos na lista
+    if (amigos.length === 0) {
+        alert("A lista de amigos está vazia. Adicione pelo menos um nome antes de sortear.");
+        return;
+    }
+
+    // Gera um índice aleatório
+    let indiceSorteado = Math.floor(Math.random() * amigos.length);
+
+    // Obtém o nome sorteado
+    let amigoSorteado = amigos[indiceSorteado];
+
+    // Exibe o resultado na página
+    document.getElementById("resultado").innerHTML = `<li>O amigo sorteado é: <strong>${amigoSorteado}</strong></li>`;
+}
